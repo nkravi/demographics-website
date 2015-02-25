@@ -1,0 +1,10 @@
+[credentials]
+host_name = localhost
+port_num =  27017
+
+[db]
+name = test
+
+[collections]
+accounts = accounts
+results  = results

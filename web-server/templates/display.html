@@ -1,0 +1,88 @@
+<html>
+   <head>
+      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+      <script type="text/javascript">
+         google.load("visualization", "1", {packages:["gauge","table","corechart"]});
+         google.setOnLoadCallback(drawChart);
+         function drawChart() {
+           var edudata = google.visualization.arrayToDataTable([
+             ['education', 'number'],
+             ['no-college',     {{results['education']['no-college']}}],
+	     ['college',        {{results['education']['college']}}],
+             ['grad-school',    {{results['education']['grad-school']}}]
+           ]);
+         
+           var eduoptions = {
+             title: 'Education',
+             is3D: true,
+           };
+         
+           var chart = new google.visualization.PieChart(document.getElementById('edu'));
+           chart.draw(edudata, eduoptions);
+	   
+	   var incomedata = google.visualization.arrayToDataTable([
+             ['education', 'number'],
+             ['no-college',     {{results['education']['no-college']}}],
+	     ['college',        {{results['education']['college']}}],
+             ['grad-school',    {{results['education']['grad-school']}}]
+           ]);
+         
+           var incomeoptions = {
+             title: 'Income',
+             is3D: true,
+           };
+         
+           var chart = new google.visualization.PieChart(document.getElementById('income'));
+           chart.draw(incomedata, incomeoptions);
+
+	   var agedata = google.visualization.arrayToDataTable([
+             ['education', 'number'],
+             ['no-college',     {{results['education']['no-college']}}],
+	     ['college',        {{results['education']['college']}}],
+             ['grad-school',    {{results['education']['grad-school']}}]
+           ]);
+         
+           var ageoptions = {
+             title: 'Age',
+             is3D: true,
+           };
+         
+           var chart = new google.visualization.PieChart(document.getElementById('age'));
+           chart.draw(agedata, ageoptions);
+
+	   var edudata = google.visualization.arrayToDataTable([
+             ['education', 'number'],
+             ['no-college',     {{results['education']['no-college']}}],
+	     ['college',        {{results['education']['college']}}],
+             ['grad-school',    {{results['education']['grad-school']}}]
+           ]);
+         
+           var eduoptions = {
+             title: 'Education',
+             is3D: true,
+           };
+         
+           var chart = new google.visualization.PieChart(document.getElementById('edu'));
+           chart.draw(edudata, eduoptions);
+         }
+      </script>
+      <meta charset="utf-8">
+      <title>Twitter Demographics</title>
+   </head>
+   <body>
+      <table>
+	<tr>
+	  <td>
+        	<div id="edu" style="width: 450px; height: 250px;"></div>
+	  </td>
+          <td>
+      		<div id="income" style="width: 450px; height: 250px;"></div>
+	  </td>
+          <td>
+      		<div id="age" style="width: 450px; height: 250px;"></div>
+	  </td>
+         </tr>
+        
+       </table>
+   </body>
+</html>
